@@ -1,0 +1,24 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update</title>
+  </head>
+  <body>
+    <div>
+      <form action="{% url 'update_done' task.pk %}" method="POST">
+        {% csrf_token %}
+        <input
+          type="text"
+          value="{{task.task}}"
+          style="width: 500px; height: 20px"
+          name="edit_task"
+        />
+        <button type="submit">edit</button>
+      </form>
+    </div>
+  </body>
+</html>
